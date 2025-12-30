@@ -214,6 +214,7 @@ button {
   .screen {
     padding: var(--space-md);
   }
+  
   #start-screen h1 {
     font-size: var(--font-size-xl);
   }
@@ -221,14 +222,24 @@ button {
   #question-text {
     font-size: var(--font-size-base);
   }
+
+  /* Specific fix for answer buttons */
   .answer-btn {
-    padding: var(--space-sm);
+    padding: var(--space-md);
+    white-space: normal; /* Changes 'nowrap' to allow text wrapping */
+    width: 100%;        /* Ensures they take full width of container */
+    font-size: var(--font-size-sm);
+    text-align: left;    /* Keeps text aligned left for readability */
   }
-  button {
+
+  /* Keep 'Start' and 'Restart' buttons centered and small */
+  #start-btn, #restart-btn {
     width: 60%;
     padding: var(--space-md);
     font-size: var(--font-size-sm);
     text-align: center;
-    white-space: nowrap;
+    white-space: nowrap; /* OK for short button text like "Start" */
+    margin: 0 auto;
+    display: block;
   }
 }
